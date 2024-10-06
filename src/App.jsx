@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Box from './Component/Box'
-
+import Confetti from 'react-confetti'
 
 function App() {
   const [table, setTable ] = useState(Array(9).fill({
@@ -85,7 +85,6 @@ function App() {
   return (
     <>
       <div className="container">
-        
         <div className='align'>
           {/* <div className='players'>
             <h3>Player 1 ({playaer1Text}) : {player1Score}</h3>
@@ -105,11 +104,9 @@ function App() {
               draw || win ? "Play Again":"Restart"
             }
           </button>
-      
-
-      
+          
       </div>
-      
+      {win && <Confetti />}
     </>
   )
 }
